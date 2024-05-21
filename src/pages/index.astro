@@ -2,12 +2,14 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { GoogleAnalytics } from 'astro-analytics';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<GoogleAnalytics id="G-H58VPTB7C0" />
 	</head>
 	<body>
 		<Header />

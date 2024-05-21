@@ -5,11 +5,11 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<img src="/wm-wordmark.svg" alt="Will Merchan Logo" class="wordmark">
+		<a  class="logo" href="/"><img src="/wm-wordmark.svg" alt="Will Merchan Logo" class="wordmark"></a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<!-- <HeaderLink href="/blog">Work</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink> -->
+			<HeaderLink href="/work">Work</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
 		
 	</nav>
@@ -38,7 +38,6 @@ import { SITE_TITLE } from '../consts';
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
 	nav a.active {
@@ -47,6 +46,11 @@ import { SITE_TITLE } from '../consts';
 	.social-links,
 	.social-links a {
 		display: flex;
+	}
+	.logo {
+		margin: 0 !important;
+		padding: 0 !important;
+		border-bottom: unset !important;
 	}
 	.wordmark {
 		border-radius: unset;

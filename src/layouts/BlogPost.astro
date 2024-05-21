@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { GoogleAnalytics } from 'astro-analytics';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -12,6 +13,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<GoogleAnalytics id="G-H58VPTB7C0" />
 		<style>
 			main {
 				width: calc(100% - 2em);
