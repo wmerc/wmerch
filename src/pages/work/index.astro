@@ -1,100 +1,154 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { GoogleAnalytics } from 'astro-analytics';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Tag from "../../components/Tag.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import { GoogleAnalytics } from "astro-analytics";
 
-const posts = (await getCollection('work')).sort(
-	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+const work = (await getCollection("work")).sort(
+  (a, b) => a.data.order - b.data.order
 );
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<GoogleAnalytics id="G-H58VPTB7C0" />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/work/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <GoogleAnalytics id="G-H58VPTB7C0" />
+    <style>
+      main {
+        width: 1460px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+      .work-item {
+        padding: 1.6em 0;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .top-section {
+        display: flex;
+        gap: 32px;
+        align-items: flex-start;
+      }
+      .bottom-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .company {
+        margin: 0;
+        color: var(--gray-800);
+        line-height: 1;
+      }
+      .description {
+        color: var(--gray-600);
+        line-height: 160%;
+      }
+      .cover-image {
+        max-width: 40%;
+        height: auto;
+        border: 1px solid var(--gray-200);
+      }
+      .date {
+        margin: 0;
+        color: var(--gray-500);
+        font-size: 0.8em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .tags {
+        display: flex;
+        gap: 4px;
+      }
+      .card {
+        padding: 24px 16px;
+        border-radius: 8px;
+        border: 1px solid var(--gray-200);
+        width: 100%;
+      }
+      .card h5 {
+        text-align: center;
+        color: var(--gray-800);
+      }
+
+      .card p,
+      .card li {
+        font-size: 0.8em;
+        line-height: 150%;
+        color: var(--gray-600);
+      }
+
+      .card @media (max-width: 720px) {
+        ul {
+          gap: 0.5em;
+        }
+        ul li {
+          width: 100%;
+          text-align: center;
+        }
+        ul li:first-child {
+          margin-bottom: 0;
+        }
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      {
+        work.map((work) => (
+          <div class="work-item" id={work.slug}>
+            <div class="top-section">
+              <img
+                src={work.data.coverImage}
+                alt={work.data.company}
+                class="cover-image"
+              />
+              <div class="company-content">
+                <p class="date">{work.data.workDates}</p>
+                <h4 class="company">{work.data.company}</h4>
+                <p class="description">{work.data.companyDescription}</p>
+                {/* <div class="tags">
+                  {work.data.tags.map((tag) => (
+                    <Tag tag={tag} />
+                  ))}
+                </div> */}
+              </div>
+            </div>
+            <div class="bottom-section">
+              <div class="card">
+                <h5>How I spent my time</h5>
+                <p>{work.data.jobDescription}</p>
+              </div>
+              <div class="card">
+                <h5>What I'm proud of</h5>
+                <ul>
+                  {work.data.accomplishments.map((accomplishment) => (
+                    <li>{accomplishment}</li>
+                  ))}
+                </ul>
+              </div>
+              <div class="card">
+                <h5>Project walkthroughs</h5>
+                <ul>
+                  {work.data.projectLinks.map((project) => (
+                    <li>
+                      <a href={project.projectLink}>{project.projectName}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </main>
+  </body>
 </html>

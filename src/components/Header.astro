@@ -35,12 +35,12 @@ import { SITE_TITLE } from '../consts';
 		align-items: center;
 		justify-content: space-between;
 	}
-	nav a {
+	.internal-links a {
 		padding: 1em 0.5em;
 		color: var(--black);
 		text-decoration: none;
 	}
-	nav a.active {
+	.internal-links a.active {
 		text-decoration: none;
 	}
 	.social-links,
@@ -48,9 +48,7 @@ import { SITE_TITLE } from '../consts';
 		display: flex;
 	}
 	.logo {
-		margin: 0 !important;
-		padding: 0 !important;
-		border-bottom: unset !important;
+		display: flex;
 	}
 	.wordmark {
 		border-radius: unset;
