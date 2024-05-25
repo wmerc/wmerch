@@ -69,6 +69,7 @@ const work = (await getCollection("work")).sort(
         border-radius: 8px;
         border: 1px solid var(--gray-200);
         width: 100%;
+        box-sizing: border-box;
       }
       .card h5 {
         text-align: center;
@@ -95,6 +96,37 @@ const work = (await getCollection("work")).sort(
         }
         ul li:first-child .title {
           font-size: 1.563em;
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        .top-section {
+          flex-direction: column;
+        }
+
+        main {
+          margin: 0 auto;
+        }
+        .cover-image {
+          max-width: 70%;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .cover-image {
+          max-width: 100%;
+        }
+        .company {
+          text-align: center;
+        }
+        .date {
+          text-align: center;
+        }
+        .bottom-section {
+          flex-direction: column;
+        }
+        .work-item {
+          gap: 24px;
         }
       }
     </style>
