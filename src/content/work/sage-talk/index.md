@@ -11,5 +11,12 @@ accomplishments:
     "Designed a solution to easily manage am expandable decision tree",
     "Built and animated the chat widget opening and closing experience",
   ]
-projectLinks: [{ projectName: "Chat widget [coming soon]", projectLink: "#" }]
+projectLinks:
+  [
+    {
+      projectName: "Live Chat dashboard",
+      projectLink: "/work/sage-ai-live-chat",
+    },
+    { projectName: "Chat widget", projectLink: "/work/sage-ai-widget" },
+  ]
 ---
