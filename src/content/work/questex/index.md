@@ -16,7 +16,11 @@ projectLinks:
   [
     {
       projectName: "Learning Management System [coming soon]",
-      projectLink: "#",
+      projectLink: "/work/questex-media-site-cms",
+    },
+    {
+      projectName: "News Platform CMS",
+      projectLink: "/work/questex-media-site-cms",
     },
   ]
 ---
