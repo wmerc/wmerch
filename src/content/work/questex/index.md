@@ -19,6 +19,10 @@ projectLinks:
       projectLink: "/work/questex-media-site-cms",
     },
     {
+      projectName: "Live Event Platform",
+      projectLink: "/work/questex-event-site-cms",
+    },
+    {
       projectName: "News Platform CMS",
       projectLink: "/work/questex-media-site-cms",
     },
