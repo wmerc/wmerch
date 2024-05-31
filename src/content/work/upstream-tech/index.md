@@ -13,5 +13,10 @@ accomplishments:
     "Building the first version of the product design system",
   ]
 projectLinks:
-  [{ projectName: "Land comparison [coming soon]", projectLink: "#" }]
+  [
+    {
+      projectName: "Custom vector data layers",
+      projectLink: "/work/upstream-tech-custom-layers",
+    },
+  ]
 ---
