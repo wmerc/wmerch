@@ -14,7 +14,10 @@ accomplishments:
   ]
 projectLinks:
   [
-    { projectName: "Accessible Graph Library [coming soon]", projectLink: "#" },
+    {
+      projectName: "Accessible Graph Library",
+      projectLink: "/work/new-visions-accessible-data-viz",
+    },
     { projectName: "Remote Learning Features [coming soon]", projectLink: "#" },
   ]
 ---

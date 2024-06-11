@@ -3,7 +3,6 @@ title: "Upstream Tech Custom Layers"
 company: "Upstream Tech"
 description: "Adding custom vector data to map visuals"
 cover: "/assets/upstream-customerlayer-featured.jpg"
-category: "Product Design"
 date: 2019-10-25
 tags:
   - Product Design
@@ -27,8 +26,6 @@ Working with our business development team, we were able to schedule calls with 
 - A user should be able to upload their vector data
 - Each uploaded layer contains metadata, a user should be able to specify which is important
 - Once the layers are in the application, a user should be able to decide how many layers they want to see at a given time
-
-## The Approach
 
 ![user flow of user layers feature](./upstream-customlayer-userflow.png)
 
