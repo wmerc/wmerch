@@ -13,8 +13,8 @@ import { GoogleAnalytics } from "astro-analytics";
   </head>
   <body>
     <Header />
+    <img src="/home-header.png" alt="header image" class="header-image" />
     <main>
-      <img src="/profile-image.jpg" alt="profile image" class="profile-image" />
       <h4>Hey there!</h4>
       <p>
         I'm Will, a seasoned product designer with over a decade of experience.
@@ -74,6 +74,18 @@ import { GoogleAnalytics } from "astro-analytics";
         border-radius: 8px;
         border: 3px solid var(--gray-500);
         margin-bottom: 4px;
+      }
+      .header-image {
+        width: 100%;
+        max-width: 1620px;
+        margin-bottom: 4px;
+        margin: 64px auto 0;
+        padding: 0 1em;
+        display: block;
+        box-sizing: border-box;
+      }
+      main {
+        margin-top: 0;
       }
     </style>
   </body>
