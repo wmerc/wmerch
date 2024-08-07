@@ -13,7 +13,9 @@ import { GoogleAnalytics } from "astro-analytics";
   </head>
   <body>
     <Header />
-    <img src="/home-header.png" alt="header image" class="header-image" />
+    <div class="header-container">
+      <img src="/home-header.png" alt="header image" class="header-image" />
+    </div>
     <main>
       <h4>Hey there!</h4>
       <p>
@@ -75,14 +77,17 @@ import { GoogleAnalytics } from "astro-analytics";
         border: 3px solid var(--gray-500);
         margin-bottom: 4px;
       }
+      .header-container {
+        margin: 64px auto 0;
+        display: block;
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 1em;
+        box-sizing: border-box;
+      }
       .header-image {
         width: 100%;
-        max-width: 1620px;
-        margin-bottom: 4px;
-        margin: 64px auto 0;
-        padding: 0 1em;
-        display: block;
-        box-sizing: border-box;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
       main {
         margin-top: 0;
