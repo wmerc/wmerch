@@ -5,7 +5,7 @@ companyDescription: "New Visions for Public Schools is a non-profit organization
 workDates: "2020 – Present"
 coverImage: "/assets/work-cover-nv.jpg"
 tags: ["Management", "Design Systems", "Accessbility"]
-jobDescription: "I joined New Visions in 2020 as a Lead Product Designer. Over the next 4 years I grew the design team, helped bridge the gap between design and engineering, and worked on designing features across all our product verticals. I was promoted to Head of Product Design in 2022, and have since continued to champion our design team and focus on product and process improvements."
+jobDescription: "I joined New Visions in 2020 as a Lead Product Designer, where I have spent the last four years expanding the design team, fostering stronger collaboration between design and engineering, and driving the development of features across all product verticals. Throughout this time, I have continued to champion our design team and focus on product and process improvements."
 accomplishments:
   [
     "Created first career ladder for product designers",
