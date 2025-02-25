@@ -1,7 +1,7 @@
 ---
 order: 3
 company: "SageAI"
-companyDescription: "SageAI builds a suite of customer support tools integrated with natural language processing and machine learning features to improve the speed and quality of service. SageTalk, the flagship tool, focuses on allowing organizations of all sizes offer a productive and cost-efficient way help their customers."
+companyDescription: "SageAI develops a suite of customer support tools powered by natural language processing and machine learning to enhance service speed and quality. Its flagship product, SageTalk, enables organizations of all sizes to provide efficient and cost-effective customer support. As a Design Engineer at SageAI, I worked across both product design and front-end development, designing the chat interface and admin dashboard for conversation routing while also building the corresponding React components in collaboration with backend engineers."
 workDates: "2017 – 2018"
 coverImage: "/assets/work-cover-sage.jpg"
 tags: ["tag1", "tag2"]
