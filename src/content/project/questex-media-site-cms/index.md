@@ -1,5 +1,5 @@
 ---
-title: "Media Site CMS"
+title: "News Platform CMS"
 company: "Questex"
 description: "Re-design of a content management system for online news publications"
 cover: "/assets/NewsSite-featured-1481006539.jpg"

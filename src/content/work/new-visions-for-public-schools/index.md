@@ -1,7 +1,7 @@
 ---
 order: 1
 company: "New Visions for Public Schools"
-companyDescription: "New Visions for Public Schools is a non-profit organization focused on improving public schools in New York City. Their mission centers around removing barriers to success for students of color and low-income backgrounds. The Portal, a web application, centralizes critical information about students in one place. Educators can create individualized student plans, monitor progress towards goals, and receive alerts if a student starts to fall behind."
+companyDescription: New Visions for Public Schools, a non-profit organization dedicated to improving public education in New York City, focuses on removing barriers to success for students of color and low-income backgrounds. A key initiative, the Portal, is a web application that centralizes critical student information, enabling educators to create individualized plans, track progress, and receive alerts when students need support. I joined New Visions in 2020 as a Lead Product Designer, where I spent four years growing the design team, strengthening collaboration between design and engineering, and driving feature development across all product verticals, all while championing design excellence and continuous product and process improvements."
 workDates: "2020 – Present"
 coverImage: "/assets/work-cover-nv.jpg"
 tags: ["Management", "Design Systems", "Accessbility"]

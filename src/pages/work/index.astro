@@ -47,6 +47,7 @@ const work = (await getCollection("work")).sort(
       .description {
         color: var(--gray-600);
         line-height: 160%;
+        font-size: 0.9em;
       }
       .cover-image {
         max-width: 40%;
@@ -78,7 +79,7 @@ const work = (await getCollection("work")).sort(
 
       .card p,
       .card li {
-        font-size: 0.8em;
+        font-size: 0.9em;
         line-height: 150%;
         color: var(--gray-600);
       }
@@ -156,11 +157,7 @@ const work = (await getCollection("work")).sort(
             </div>
             <div class="bottom-section">
               <div class="card">
-                <h5>How I spent my time</h5>
-                <p>{work.data.jobDescription}</p>
-              </div>
-              <div class="card">
-                <h5>What I'm proud of</h5>
+                <h5>Key Achievements</h5>
                 <ul>
                   {work.data.accomplishments.map((accomplishment) => (
                     <li>{accomplishment}</li>
@@ -168,7 +165,7 @@ const work = (await getCollection("work")).sort(
                 </ul>
               </div>
               <div class="card">
-                <h5>Project walkthroughs</h5>
+                <h5>Case Studies</h5>
                 <ul>
                   {work.data.projectLinks.map((project) => (
                     <li>
