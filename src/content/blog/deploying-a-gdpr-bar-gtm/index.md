@@ -1,6 +1,6 @@
 ---
 title: "Deploying a GDPR cookie bar via GTM"
-description: "test"
+description: "How to build and deploy a GDPR cookie consent bar through Google Tag Manager using localStorage with a cookie fallback."
 heroImage: "/assets/wm-blog-gdpr-header.jpg"
 category: "Development"
 pubDate: 2018-05-23    
@@ -33,7 +33,7 @@ On the screen which opens, give the variable a name such as UserConsent, and cli
 
 ### 2. Create A Fallback Function
 
-On some older versions of Internet Explorer, it's not reliable to use localStorage, as well as no support no Opera Mini. For these use cases, it's best to include a cookie fallback. The way we're going to do this is check for localStorage support in a few areas.
+On some older versions of Internet Explorer, it's not reliable to use localStorage, as well as no support in Opera Mini. For these use cases, it's best to include a cookie fallback. The way we're going to do this is check for localStorage support in a few areas.
 
 What we're going to need is a function which generates a cookie when we call it. On the same variables tab, click New under the User-Defined Variables Section. Give this function a name such as setConsentCookie and under the type select Custom Javascript.
 
@@ -85,7 +85,7 @@ if (window['Storage']) {
 div.innerHTML = '<div class="text">This website uses cookies. By continuing to use this site, you agree to our use of cookies. To find out more visit our <a href="https://YourDomainHere.com/privacy-policy" target="_blank">Privacy Policy</a> page.</div><div id="confirm-btn">Continue</div>';
 div.setAttribute('id','gdpr-bar');
 
-//This executes the code only if the user hasn't accepted the conditions previously, by checking existing of true in the cookie
+//This executes the code only if the user hasn't accepted the conditions previously, by checking for the existence of true in the cookie
 if (localSession!==true) {
   //Insert the div we created before the one we targeted  
   target.parentNode.insertBefore( div, target );

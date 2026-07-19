@@ -50,7 +50,8 @@ Once I understood what needed to be included in the UI, I worked on some sketche
 
 Now that I had a general idea of the layout and where actions and data would go, I iterated on specific components and worked through the design of where each element would go in the components, ensuring I wasn't leaving any gaps in the expected user experience.
 
-##Production
+## Production
+
 After getting my ideas down on the whiteboard, I moved to Sketch to create higher fidelity mockups of the screen and individual components. I started with a component approach and translated that into Sketch symbols. In addition to framing the design as components, I also tried to keep the layout modular, knowing we were still very early in the process of customer feedback and would have to shift elements around or add to them as we learned what parts worked best based on customer research.
 
 ![sketch design of live chat](./sagelivechat-sketch.jpg)
@@ -67,8 +68,8 @@ We are currently listening to customer feedback on this rollout, and working on 
 
 ### Takeaways
 
-- Dashboards can be overwhelming, especially ones that require immediate action. Minimizing the interface the distance between related actions is crucial for efficiency.
+- Dashboards can be overwhelming, especially ones that require immediate action. Minimizing the distance between related actions is crucial for efficiency.
 - There's a hierarchy for live chat interfaces, from all messages to a single message, to user details. Flowing this from left to right makes for a more intuitive understanding of this.
 - Color and font callouts were important for directing user attention in areas with lots going on, such as the red notification for waiting for messages at the top of each tab list.
 - The user details area is probably the least used and focused on, and its size in relation to the other areas of the page should reflect this.
-- To make it clear the benefit of AI in live chat, we should show what work the system is offloading. We did this by adding a new column before the other tabs, labeled bot. This is where the users can see all the messages they don't need to reply as the bot is handling them.
+- To make it clear the benefit of AI in live chat, we should show what work the system is offloading. We did this by adding a new column before the other tabs, labeled bot. This is where the users can see all the messages they don't need to reply to, as the bot is handling them.

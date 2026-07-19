@@ -1,68 +1,70 @@
-# Astro Starter Kit: Blog
+# willmerchan.com
 
-```sh
-npm create astro@latest -- --template blog
-```
+Personal portfolio and blog for **Will Merchan**, a product designer. The site
+showcases work history, in-depth case studies, and design/development writing.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+🔗 Live at [willmerchan.com](https://willmerchan.com)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech stack
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+- **[Astro](https://astro.build)** (static output) — no UI framework; pure
+  `.astro` components and vanilla CSS with custom properties
+- **[MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)** for content authoring
+- **[@astrojs/rss](https://docs.astro.build/en/guides/rss/)** — blog feed at `/rss.xml`
+- **[@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)** — auto-generated sitemap
+- **Google Analytics 4** via a small local `GoogleAnalytics.astro` component
 
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
-├── public/
+├── public/                  # static assets: fonts, favicons, images, wordmark
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── components/          # BaseHead, Header, HeaderLink, GoogleAnalytics, etc.
+│   ├── content/
+│   │   ├── blog/            # blog posts (one folder per post: <slug>/index.md)
+│   │   ├── work/            # employers / roles (drives the /work page)
+│   │   └── project/         # detailed case studies linked from work entries
+│   ├── layouts/             # BlogPost.astro, ProjectPost.astro
+│   ├── pages/               # routes: /, /work, /blog, dynamic [...slug], rss.xml
+│   ├── styles/global.css    # global styles + CSS custom properties
+│   └── content.config.ts    # content collection schemas (Content Layer API)
 ├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+└── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Content is managed with Astro's **Content Layer API**. Three collections are
+defined in `src/content.config.ts`:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- `blog` — articles; frontmatter: `title`, `description`, `pubDate`, `heroImage`
+- `work` — roles; frontmatter includes `order`, `accomplishments`, `projectLinks`
+- `project` — case studies; supports `draft: true` to keep a page in the repo
+  while excluding it from the build
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Each entry lives in its own folder as `index.md` alongside its images. The URL
+slug is the folder name.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Commands
 
-## 🧞 Commands
+Run from the project root:
 
-All commands are run from the root of the project, from a terminal:
+| Command             | Action                                        |
+| :------------------ | :-------------------------------------------- |
+| `npm install`       | Install dependencies                          |
+| `npm run dev`       | Start the dev server at `localhost:4321`      |
+| `npm run build`     | Build the production site to `./dist/`        |
+| `npm run preview`   | Preview the production build locally          |
+| `npx astro check`   | Type-check the project                        |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Adding content
 
-## 👀 Want to learn more?
+**Blog post:** create `src/content/blog/<slug>/index.md` with the required
+frontmatter and drop any images in the same folder.
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Case study:** create `src/content/project/<slug>/index.md`. Link it from the
+relevant role in `src/content/work/<company>/index.md` via `projectLinks`. Set
+`draft: true` to keep it unpublished until it's ready.
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Originally scaffolded from the Astro blog starter, based on
+[Bear Blog](https://github.com/HermanMartinus/bearblog/).

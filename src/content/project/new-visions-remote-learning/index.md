@@ -4,6 +4,7 @@ company: "New Visions for Public Schools"
 description: "Providing visibility for schools transitioning to remote learning"
 cover: "#"
 date: 2020-05-01
+draft: true
 tags:
   - Product Design
   - User Experience

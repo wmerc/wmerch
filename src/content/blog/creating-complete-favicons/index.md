@@ -1,6 +1,6 @@
 ---
 title: "Creating Complete Favicons"
-description: 'test'
+description: "A guide to generating a complete favicon set that covers browser tabs, mobile home screens, pinned tabs, and desktop shortcuts."
 type: "blog"
 heroImage: "/assets/wm-blog-favicon-header.jpg"
 category: "Design"

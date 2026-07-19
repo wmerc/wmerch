@@ -1,6 +1,6 @@
 ---
 title: "Creating High-Resolution Social Media Brand Images"
-description: "test"
+description: "A Photoshop workflow for creating high-resolution Twitter and Facebook cover images that avoid platform compression."
 type: "blog"
 heroImage: "/assets/wm-social-cover-2.jpg"
 category: "Design"
@@ -26,7 +26,7 @@ The specs provided by Facebook are as follows:
 
 The important parts of these specs are to export your image as an sRGB JPG and to keep it under 100 kilobytes. The 851 x 315 is a good starting place, but if you create your image at that size, you'll find the result to be overly compressed once you upload. Especially on higher resolution monitors.
 
-The way around this compression is to upload an image double the size, **1702 x 630 px.** Here is a simple workflow I use for creating an image at those dimensions while still under 100K. I create these in Photoshop to leverage to the compression settings. Here are my document settings. Note the resolution is kept at 72 PPI to minimize the file size for the 100K limit.
+The way around this compression is to upload an image double the size, **1702 x 630 px.** Here is a simple workflow I use for creating an image at those dimensions while still under 100K. I create these in Photoshop to leverage the compression settings. Here are my document settings. Note the resolution is kept at 72 PPI to minimize the file size for the 100K limit.
 
 ![photoshop image size settings](./1-ps-settings.jpg)
 

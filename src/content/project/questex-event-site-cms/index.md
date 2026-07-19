@@ -27,7 +27,7 @@ One of the first steps in creating this new platform was to understand how the c
 
 ## Wireframes
 
-We selected a group of users to act as our user voice in the process and heavily involved them in the process for feedback and validation. On the design side, this allowed us to create a well-defined user story and understand the success criteria of the design. We took the research and created our initial wireframes and iterated upon after presenting them to the client. Since we wanted this platform to apply to as many types of events as possible, designing it in a component-based fashion would allow site admin to choose which blocks they needed and could do without. The design had to allow for the neighboring of unknown components and follow a modular layout in which each component is independent of the others.
+We selected a group of users to act as our user voice in the process and heavily involved them in the process for feedback and validation. On the design side, this allowed us to create a well-defined user story and understand the success criteria of the design. We took the research and created our initial wireframes and iterated on them after presenting them to the client. Since we wanted this platform to apply to as many types of events as possible, designing it in a component-based fashion would allow site admin to choose which blocks they needed and could do without. The design had to allow for the neighboring of unknown components and follow a modular layout in which each component is independent of the others.
 
 ![Events platform wireframe](./Events-wireframe.jpg)
 

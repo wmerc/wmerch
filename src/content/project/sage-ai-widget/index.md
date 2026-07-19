@@ -4,6 +4,7 @@ company: "SageAI"
 description: "The build of a launcher widget for sage ai"
 cover: "/assets/sagewidget-featured.jpg"
 date: 2018-02-20
+draft: true
 tags:
   - Product Design
   - UX
@@ -18,7 +19,7 @@ SageTalk, the first product from SageAI is a machine learning and natural langua
 
 ![original design of chatbot](./sagewidget-old-shell.png)
 
-My first step in this process was to learn what features the current beta customers were asking for and what paint points they currently had. This feedback combined with the client manager's input, let me form a short list of possible features. Secondly, I took a look at the competitive landscape and measured our product against those. Looking for where we were falling short as well as where there was an opportunity to pioneer a feature in the space. From here I organized a set of cards in Trello and came up with the following list.
+My first step in this process was to learn what features the current beta customers were asking for and what pain points they currently had. This feedback combined with the client manager's input, let me form a short list of possible features. Secondly, I took a look at the competitive landscape and measured our product against those. Looking for where we were falling short as well as where there was an opportunity to pioneer a feature in the space. From here I organized a set of cards in Trello and came up with the following list.
 
 - Create a more native looking UI when using the chatbot on mobile.
 - Increase animation speed timing to improve the feeling of responsiveness.

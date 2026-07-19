@@ -17,11 +17,11 @@ Upstream Tech is a technology company harnessing advancements in remote sensing,
 
 ## The Challenge
 
-In speaking with our customers we kept hearing a paint point around users wanting to manage their vector layers of data in the application. When previously viewing their project in the application, the user would see a single layer of the outline of the land they were interested in. We knew users wanted to see additional layers of data, but questions remained around what the structure of this data looked like, how much of it they wanted to upload, and what they wanted to do with it once it was uploaded.
+In speaking with our customers we kept hearing a pain point around users wanting to manage their vector layers of data in the application. When previously viewing their project in the application, the user would see a single layer of the outline of the land they were interested in. We knew users wanted to see additional layers of data, but questions remained around what the structure of this data looked like, how much of it they wanted to upload, and what they wanted to do with it once it was uploaded.
 
 ## The Approach
 
-Working with our business development team, we were able to schedule calls with current clients to understand the specific user story around this request. As land managers, they wanted to add additional layers of vector data, so that they could see where geographically these layers overlapped. And the related metadata associated with each of the layers to better identify what was happening and permissible in these areas. From this story, we derived the following features as necessary to test our solution.
+Working with our business development team, we were able to schedule calls with current clients to understand the specific user story around this request. As land managers, they wanted to add additional layers of vector data so that they could see where geographically these layers overlapped, along with the related metadata associated with each layer, to better identify what was happening and permissible in these areas. From this story, we derived the following features as necessary to test our solution.
 
 - A user should be able to upload their vector data
 - Each uploaded layer contains metadata, a user should be able to specify which is important

@@ -12,12 +12,12 @@ tags:
   - Art Direction
 ---
 
-The challenge was to create a news platform which would be able to serve as a template for multiple brands and iterations. The brands ranged from the hospitality to biotechnology, with a wide array of branding standards and existing features to be migrated.
+The challenge was to create a news platform which would be able to serve as a template for multiple brands and iterations. The brands ranged from hospitality to biotechnology, with a wide array of branding standards and existing features to be migrated.
 
 One of the early brands migrated was [FierceBiotech.](http://fiercebiotech.com) The process was as follows:
 
 - Requirements gathering and analysis of current site features
-- Stakeholder and user input on paint points of current platform
+- Stakeholder and user input on pain points of current platform
 - Translating requirements to a set of goals for the new platform
 - Creation of wireframes with buy in from engineering and product owners
 - Designing the UI and prototyping interaction methods where necessary
@@ -27,13 +27,13 @@ The biggest challenge was anticipating the needs of future brands with this plat
 
 ## Original Design
 
-The existing layout was a non-responsive, 960px width site with 3 columns. Alot of information was presented up front with not enough hierarchy and guidance for the user. One of the goals was to clarify the focus on the page and showcase the editorial content.
+The existing layout was a non-responsive, 960px width site with 3 columns. A lot of information was presented up front with not enough hierarchy and guidance for the user. One of the goals was to clarify the focus on the page and showcase the editorial content.
 
 ![original layout of the news platform](./NewsSite-original.jpg)
 
 ## Wireframes
 
-Using Axure to create the wireframes, I prototyped a few solutions based on feedback and came up with the following. A prominent placement for the logo which would allow numerous logo sizes to work. A clear header section distinguishing primary and secondary navigation elements, and below that are featured stories. Sticking to a 2 column layout allows us to put greater emphasis on the content and use the single sidebar as a utility area actionable items such as newsletter signups and most popular content.
+Using Axure to create the wireframes, I prototyped a few solutions based on feedback and came up with the following. A prominent placement for the logo which would allow numerous logo sizes to work. A clear header section distinguishing primary and secondary navigation elements, and below that are featured stories. Sticking to a 2 column layout allows us to put greater emphasis on the content and use the single sidebar as a utility area for actionable items such as newsletter signups and most popular content.
 
 ![wireframe of news site](./NewsSite-wireframe.jpg)
 
