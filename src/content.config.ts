@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
@@ -14,7 +15,7 @@ const blog = defineCollection({
 });
 
 const work = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
 	schema: z.object({
 		order: z.number(),
 		isPublished: z.boolean().optional(),
@@ -33,7 +34,7 @@ const work = defineCollection({
 });
 
 const project = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.md', base: './src/content/project' }),
 	schema: z.object({
 		title: z.string(),
 		company: z.string(),
@@ -41,6 +42,9 @@ const project = defineCollection({
 		date: z.coerce.date(),
 		cover: z.string().optional(),
 		tags: z.array(z.string()).optional(),
+		// Set to true to keep the case study in the repo but exclude it from
+		// the build (no route generated, not reachable).
+		draft: z.boolean().default(false),
 	}),
 });
 

@@ -1,0 +1,19 @@
+---
+// Minimal Google Analytics 4 (gtag.js) component.
+// Replaces the unmaintained `astro-analytics` package.
+interface Props {
+	id: string;
+}
+const { id } = Astro.props;
+---
+
+<!-- Google tag (gtag.js) -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+<script is:inline define:vars={{ id }}>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', id);
+</script>

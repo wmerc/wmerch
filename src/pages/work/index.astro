@@ -1,10 +1,9 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
-import Tag from "../../components/Tag.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-import { GoogleAnalytics } from "astro-analytics";
+import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
 
 const work = (await getCollection("work")).sort(
   (a, b) => a.data.order - b.data.order
@@ -137,7 +136,7 @@ const work = (await getCollection("work")).sort(
     <main>
       {
         work.map((work) => (
-          <div class="work-item" id={work.slug}>
+          <div class="work-item" id={work.id}>
             <div class="top-section">
               <img
                 src={work.data.coverImage}
