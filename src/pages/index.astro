@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ShaderBackground from "../components/ShaderBackground.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 ---
@@ -14,85 +15,252 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
   </head>
   <body>
     <Header />
-    <div class="header-container">
-      <img src="/home-header.png" alt="header image" class="header-image" />
-    </div>
-    <main>
-      <h4>Hey there!</h4>
-      <p>
-        I'm Will, a seasoned product designer with over a decade of experience.
-        I am passionate about creating intuitive, user-centered designs that
-        solve real-world problems. My career has been dedicated to transforming
-        complex ideas into accessible, beautiful, and functional products that
-        delight users and drive business success.
-      </p>
-      <p>
-        I have had the privilege of working on a diverse range of projects
-        across different industries, which has given me a broad perspective and
-        a versatile skill set. My design philosophy is rooted in empathy and
-        innovation, always striving to understand the user's needs and pushing
-        the boundaries of what’s possible.
-      </p>
-      <p>
-        Some of the work I'm proud of:
-        <ul>
-          <li>
-            Building a school management app at <a
-              class="highlight"
-              href="/work#new-visions-for-public-schools"
-              >New Visions for Public Schools</a
+
+    <section class="hero">
+      <ShaderBackground />
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Product Designer · 10+ years</p>
+          <h1>I turn complex problems into products people enjoy using.</h1>
+          <p class="lede">
+            For over a decade I've helped teams across education, climate, and
+            AI design software that's intuitive, accessible, and genuinely
+            useful.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/work">View work</a>
+            <a class="btn btn-ghost" href="mailto:willmerchan@gmail.com"
+              >Get in touch</a
             >
-          </li>
-          <li>
-            Designing climate tech solutions at <a
-              class="highlight"
-              href="/work#upstream-tech">Upstream Tech</a
-            >
-          </li>
-          <li>
-            Developing a customer support chatbot at <a
-              href="/work#sage-talk"
-              class="highlight">SageAI</a
-            >
-          </li>
-          <li>
-            Leading the design of content management systems and online
-            education platforms at <a href="/work#questex" class="highlight"
-              >Questex.</a
-            >
-          </li>
-        </ul>
-      </p>
-      <hr />
-      <p>
-        If you'd like to chat, send me a <a href="mailto:willmerchan@gmail.com"
-          >message!</a
-        >
-      </p>
+          </div>
+        </div>
+
+        <div class="deck" aria-label="A preview of selected work">
+          <div class="card c1">
+            <img src="/assets/work-cover-nv.jpg" alt="New Visions for Public Schools" />
+          </div>
+          <div class="card c2">
+            <img src="/assets/work-cover-upstream.jpg" alt="Upstream Tech" />
+          </div>
+          <div class="card c3">
+            <img src="/assets/work-cover-sage.jpg" alt="SageAI" />
+          </div>
+          <div class="card c4">
+            <img src="/assets/work-cover-questex.jpg" alt="Questex" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="home">
+      <section class="about">
+        <h2>Hey there!</h2>
+        <p>
+          I'm Will, a seasoned product designer with over a decade of
+          experience. I am passionate about creating intuitive, user-centered
+          designs that solve real-world problems. My career has been dedicated
+          to transforming complex ideas into accessible, beautiful, and
+          functional products that delight users and drive business success.
+        </p>
+        <p>
+          I have had the privilege of working on a diverse range of projects
+          across different industries, which has given me a broad perspective
+          and a versatile skill set. My design philosophy is rooted in empathy
+          and innovation, always striving to understand the user's needs and
+          pushing the boundaries of what's possible.
+        </p>
+      </section>
     </main>
     <Footer />
 
     <style>
-      .profile-image {
-        width: 120px;
-        border-radius: 8px;
-        border: 3px solid var(--gray-500);
-        margin-bottom: 4px;
+      /* Hero (full-bleed shader backdrop) */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
       }
-      .header-container {
-        margin: 64px auto 0;
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(
+          90deg,
+          rgba(246, 244, 239, 0.62),
+          rgba(246, 244, 239, 0.12) 55%,
+          rgba(246, 244, 239, 0) 100%
+        );
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: clamp(3rem, 7vw, 6rem) var(--gutter);
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: var(--space-6);
+        align-items: center;
+      }
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 1.25rem;
+      }
+      .hero-text h1 {
+        font-size: clamp(2.2rem, 4vw, 3.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        max-width: 15ch;
+        margin: 0 0 1.5rem;
+      }
+      .lede {
+        font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+        line-height: 1.6;
+        color: var(--ink-soft);
+        max-width: 34rem;
+        margin: 0 0 2rem;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.72rem 1.4rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        border: 1px solid var(--accent);
+      }
+      .btn-primary:hover {
+        background: var(--accent-ink);
+        border-color: var(--accent-ink);
+        color: #fff;
+      }
+      .btn-ghost {
+        color: var(--accent-ink);
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.45);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* Fanned work-card deck (decorative preview) */
+      .deck {
+        position: relative;
+        min-height: 460px;
+        justify-self: center;
+        width: 100%;
+      }
+      .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(360px, 82%);
+        border-radius: 14px;
+        overflow: hidden;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        box-shadow: 0 12px 34px rgba(28, 30, 27, 0.15);
+        transform: translate(-50%, -50%) translateX(var(--x)) translateY(var(--y))
+          rotate(var(--r));
+        transition:
+          transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+          box-shadow 0.4s ease;
+      }
+      .card img {
         display: block;
         width: 100%;
-        max-width: 1400px;
-        padding: 0 1em;
-        box-sizing: border-box;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
       }
-      .header-image {
-        width: 100%;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      .c1 {
+        --r: -8deg;
+        --x: -116px;
+        --y: 18px;
+        z-index: 4;
       }
-      main {
-        margin-top: 0;
+      .c2 {
+        --r: -3deg;
+        --x: -40px;
+        --y: -4px;
+        z-index: 3;
+      }
+      .c3 {
+        --r: 4deg;
+        --x: 40px;
+        --y: 2px;
+        z-index: 2;
+      }
+      .c4 {
+        --r: 9deg;
+        --x: 116px;
+        --y: 20px;
+        z-index: 1;
+      }
+      /* Subtle in-place lift on hover — a preview cue, not navigation. */
+      .card:hover {
+        transform: translate(-50%, -50%) translateX(var(--x))
+          translateY(calc(var(--y) - 12px)) rotate(var(--r)) scale(1.015);
+        box-shadow: 0 18px 42px rgba(28, 30, 27, 0.2);
+      }
+
+      /* Home container for sections below the hero */
+      .home {
+        width: var(--page-max);
+        max-width: calc(100% - 2 * var(--gutter));
+        margin: var(--space-7) auto;
+      }
+      .about {
+        max-width: var(--measure);
+      }
+
+      @media (max-width: 820px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          gap: var(--space-5);
+        }
+        .deck {
+          position: relative;
+          min-height: 0;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--space-3);
+        }
+        .card {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          transform: none;
+          box-shadow: 0 1px 4px rgba(28, 30, 27, 0.08);
+        }
+        .card:hover {
+          transform: translateY(-4px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .card {
+          transition: none;
+        }
       }
     </style>
   </body>
