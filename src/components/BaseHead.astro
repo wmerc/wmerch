@@ -1,4 +1,9 @@
 ---
+// Self-hosted fonts (no CDN): Inter for body, Fraunces (optical-sizing axis)
+// for display headings. Imported here so they load on every page.
+import '@fontsource-variable/inter';
+import '@fontsource-variable/fraunces/opsz.css';
+
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
@@ -19,11 +24,6 @@ const { title, description, image = '/wm-social-image.jpg' } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
-
-<!-- Font preloads -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Freeman&family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
