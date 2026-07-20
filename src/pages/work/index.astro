@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
@@ -17,10 +18,10 @@ const work = (await getCollection("work")).sort(
     <GoogleAnalytics id="G-H58VPTB7C0" />
     <style>
       main {
-        width: 1460px;
+        width: var(--page-max);
         display: flex;
         flex-direction: column;
-        gap: 80px;
+        gap: var(--space-7);
       }
       .work-item {
         padding: 1.6em 0;
@@ -178,5 +179,6 @@ const work = (await getCollection("work")).sort(
         ))
       }
     </main>
+    <Footer />
   </body>
 </html>

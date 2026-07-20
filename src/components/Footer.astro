@@ -1,0 +1,94 @@
+---
+import { SITE_TITLE } from "../consts";
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-inner">
+    <div class="brand">
+      <p class="name">{SITE_TITLE}</p>
+      <p class="tagline">Product designer. Let's build something considered.</p>
+    </div>
+    <nav class="ft-links" aria-label="Footer">
+      <a href="mailto:willmerchan@gmail.com">Email</a>
+      <a href="/work">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+  </div>
+  <div class="footer-base">
+    <span>&copy; {year} {SITE_TITLE}</span>
+    <a href="#top" class="top-link">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--line);
+    background: var(--surface-2);
+    margin-top: var(--space-7);
+    padding: var(--space-6) var(--gutter) var(--space-5);
+  }
+  .footer-inner,
+  .footer-base {
+    max-width: var(--page-max);
+    margin: 0 auto;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding-bottom: var(--space-5);
+  }
+  .brand .name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    margin: 0 0 0.15rem;
+    color: var(--ink);
+  }
+  .brand .tagline {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  .ft-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+  .ft-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  .ft-links a:hover {
+    color: var(--accent);
+  }
+  .footer-base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+  .top-link {
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .top-link:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+</style>

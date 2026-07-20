@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Footer from "../components/Footer.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 type Props = CollectionEntry<"project">["data"];
@@ -74,5 +75,6 @@ const { title, company, description, date, cover, tags } = Astro.props;
         </div>
       </article>
     </main>
+    <Footer />
   </body>
 </html>
