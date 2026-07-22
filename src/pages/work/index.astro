@@ -2,6 +2,7 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Tag from "../../components/Tag.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import GoogleAnalytics from "../../components/GoogleAnalytics.astro";
@@ -23,111 +24,128 @@ const work = (await getCollection("work")).sort(
         flex-direction: column;
         gap: var(--space-7);
       }
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 0.75rem;
+      }
+      .page-head h1 {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        margin: 0 0 0.5rem;
+      }
+      .page-head p {
+        color: var(--ink-soft);
+        font-size: 1.1rem;
+        margin: 0;
+        max-width: 44rem;
+      }
+
       .work-item {
-        padding: 1.6em 0;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: var(--space-5);
+        scroll-margin-top: 6rem;
       }
-      .top-section {
-        display: flex;
-        gap: 32px;
-        align-items: flex-start;
+      .top {
+        display: grid;
+        grid-template-columns: minmax(0, 380px) 1fr;
+        gap: var(--space-5);
+        align-items: start;
       }
-      .bottom-section {
-        display: flex;
-        justify-content: space-between;
-        gap: 24px;
+      .cover {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        box-shadow: 0 8px 24px rgba(28, 30, 27, 0.08);
+      }
+      .meta .date {
+        margin: 0 0 0.5rem;
       }
       .company {
-        margin: 0;
-        color: var(--gray-800);
-        line-height: 1;
-      }
-      .description {
-        color: var(--gray-600);
-        line-height: 160%;
-        font-size: 0.9em;
-      }
-      .cover-image {
-        max-width: 40%;
-        height: auto;
-        border: 1px solid var(--gray-200);
-      }
-      .date {
-        margin: 0;
-        color: var(--gray-500);
-        font-size: 0.8em;
-        text-transform: uppercase;
-        font-weight: 600;
+        margin: 0 0 0.9rem;
+        font-size: 1.9rem;
+        line-height: 1.1;
       }
       .tags {
         display: flex;
-        gap: 4px;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.1rem;
       }
-      .card {
-        padding: 24px 16px;
-        border-radius: 8px;
-        border: 1px solid var(--gray-200);
-        width: 100%;
-        box-sizing: border-box;
-      }
-      .card h5 {
-        text-align: center;
-        color: var(--gray-800);
+      .description {
+        color: var(--ink-soft);
+        line-height: 1.6;
+        font-size: 1rem;
+        margin: 0;
       }
 
-      .card p,
-      .card li {
-        font-size: 0.9em;
-        line-height: 150%;
-        color: var(--gray-600);
+      .detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        border-top: 1px solid var(--line);
+        padding-top: var(--space-4);
+      }
+      .col-head {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin: 0 0 0.9rem;
+      }
+      .col ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .col li {
+        font-size: 0.98rem;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+      .col a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .col a:hover {
+        text-decoration: underline;
+      }
+      .soon {
+        color: var(--ink-faint);
+      }
+      .soon .badge {
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border: 1px solid var(--line);
+        border-radius: 60px;
+        padding: 0.1rem 0.5rem;
+        margin-left: 0.4rem;
+        color: var(--ink-faint);
+        white-space: nowrap;
       }
 
-      .card @media (max-width: 720px) {
-        ul {
-          gap: 0.5em;
+      @media (max-width: 860px) {
+        .top {
+          grid-template-columns: 1fr;
         }
-        ul li {
-          width: 100%;
-          text-align: center;
-        }
-        ul li:first-child {
-          margin-bottom: 0;
-        }
-        ul li:first-child .title {
-          font-size: 1.563em;
+        .cover {
+          max-width: 460px;
         }
       }
-
-      @media screen and (max-width: 1023px) {
-        .top-section {
-          flex-direction: column;
-        }
-
-        main {
-          margin: 0 auto;
-        }
-        .cover-image {
-          max-width: 70%;
-        }
-      }
-
-      @media screen and (max-width: 767px) {
-        .cover-image {
-          max-width: 100%;
-        }
-        .company {
-          text-align: center;
-        }
-        .date {
-          text-align: center;
-        }
-        .bottom-section {
-          flex-direction: column;
-        }
-        .work-item {
-          gap: 24px;
+      @media (max-width: 620px) {
+        .detail {
+          grid-template-columns: 1fr;
+          gap: var(--space-4);
         }
       }
     </style>
@@ -135,47 +153,60 @@ const work = (await getCollection("work")).sort(
   <body>
     <Header />
     <main>
+      <header class="page-head">
+        <p class="eyebrow">Work</p>
+        <h1>A decade of designing products</h1>
+        <p>Across education, climate tech, AI, and media — building intuitive tools and the design practices behind them.</p>
+      </header>
+
       {
-        work.map((work) => (
-          <div class="work-item" id={work.id}>
-            <div class="top-section">
+        work.map((item) => (
+          <article class="work-item" id={item.id}>
+            <div class="top">
               <img
-                src={work.data.coverImage}
-                alt={work.data.company}
-                class="cover-image"
+                src={item.data.coverImage}
+                alt={item.data.company}
+                class="cover"
               />
-              <div class="company-content">
-                <p class="date">{work.data.workDates}</p>
-                <h4 class="company">{work.data.company}</h4>
-                <p class="description">{work.data.companyDescription}</p>
-                {/* <div class="tags">
-                  {work.data.tags.map((tag) => (
+              <div class="meta">
+                <p class="eyebrow date">{item.data.workDates}</p>
+                <h2 class="company">{item.data.company}</h2>
+                <div class="tags">
+                  {item.data.tags.map((tag) => (
                     <Tag tag={tag} />
                   ))}
-                </div> */}
+                </div>
+                <p class="description">{item.data.companyDescription}</p>
               </div>
             </div>
-            <div class="bottom-section">
-              <div class="card">
-                <h5>Key Achievements</h5>
+            <div class="detail">
+              <div class="col">
+                <p class="col-head">Key achievements</p>
                 <ul>
-                  {work.data.accomplishments.map((accomplishment) => (
+                  {item.data.accomplishments.map((accomplishment) => (
                     <li>{accomplishment}</li>
                   ))}
                 </ul>
               </div>
-              <div class="card">
-                <h5>Case Studies</h5>
+              <div class="col">
+                <p class="col-head">Case studies</p>
                 <ul>
-                  {work.data.projectLinks.map((project) => (
-                    <li>
-                      <a href={project.projectLink}>{project.projectName}</a>
-                    </li>
-                  ))}
+                  {item.data.projectLinks.map((project) =>
+                    project.projectLink === "#" ? (
+                      <li class="soon">
+                        {project.projectName.replace(" [coming soon]", "")}
+                        <span class="badge">Coming soon</span>
+                      </li>
+                    ) : (
+                      <li>
+                        <a href={project.projectLink}>{project.projectName}</a>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
-          </div>
+          </article>
         ))
       }
     </main>
