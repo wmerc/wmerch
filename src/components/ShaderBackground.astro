@@ -35,6 +35,7 @@
         precision mediump float;
         uniform vec2 u_res;
         uniform float u_time;
+        uniform float u_dark;
 
         float hash(vec2 p){
           p = fract(p * vec2(123.34, 456.21));
@@ -74,15 +75,18 @@
           );
           float f = fbm(p + 1.5 * r);
 
-          vec3 paper = vec3(0.965, 0.957, 0.937);
+          vec3 lightPaper = vec3(0.965, 0.957, 0.937);
+          vec3 darkPaper  = vec3(0.102, 0.102, 0.090);
+          vec3 paper = mix(lightPaper, darkPaper, u_dark);
           vec3 teal  = vec3(0.043, 0.416, 0.439);
           vec3 cyan  = vec3(0.455, 0.918, 0.953);
           vec3 green = vec3(0.839, 1.0, 0.569);
+          float amp = mix(1.0, 0.55, u_dark);
 
           vec3 col = paper;
-          col = mix(col, cyan,  smoothstep(0.15, 0.9, f) * 0.35);
-          col = mix(col, teal,  smoothstep(0.35, 1.0, length(r)) * 0.26);
-          col = mix(col, green, smoothstep(0.5, 1.0, q.x) * 0.16);
+          col = mix(col, cyan,  smoothstep(0.15, 0.9, f) * 0.35 * amp);
+          col = mix(col, teal,  smoothstep(0.35, 1.0, length(r)) * 0.26 * amp);
+          col = mix(col, green, smoothstep(0.5, 1.0, q.x) * 0.16 * amp);
           col = mix(paper, col, 0.7);
 
           gl_FragColor = vec4(col, 1.0);
@@ -115,7 +119,16 @@
 
       const uRes = g.getUniformLocation(prog, "u_res");
       const uTime = g.getUniformLocation(prog, "u_time");
+      const uDark = g.getUniformLocation(prog, "u_dark");
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+
+      const darkMq = window.matchMedia("(prefers-color-scheme: dark)");
+      const isDark = () => {
+        const t = document.documentElement.getAttribute("data-theme");
+        if (t === "dark") return 1;
+        if (t === "light") return 0;
+        return darkMq.matches ? 1 : 0;
+      };
 
       const resize = () => {
         const w = canvas.clientWidth;
@@ -132,10 +145,21 @@
         if (!running) return;
         g.uniform2f(uRes, canvas.width, canvas.height);
         g.uniform1f(uTime, t * 0.001);
+        g.uniform1f(uDark, isDark());
         g.drawArrays(g.TRIANGLES, 0, 3);
         if (!reduce) requestAnimationFrame(frame);
       };
       requestAnimationFrame(frame);
+
+      // Redraw the static frame if the theme changes while paused/reduced.
+      const refresh = () => {
+        if (reduce || !running) requestAnimationFrame(frame);
+      };
+      darkMq.addEventListener("change", refresh);
+      new MutationObserver(refresh).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      });
 
       // Pause the loop when the hero scrolls out of view.
       const io = new IntersectionObserver((entries) => {

@@ -11,7 +11,9 @@
 	--font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
 	/* Refined-editorial palette: warm off-white ground, single teal accent */
+	color-scheme: light dark;
 	--paper: #f6f4ef;
+	--paper-rgb: 246, 244, 239;
 	--surface: #ffffff;
 	--surface-2: #fbfaf5;
 	--ink: #1c1e1b;
@@ -21,6 +23,7 @@
 	--accent: #0b6a70;
 	--accent-ink: #084f54;
 	--accent-wash: #e7eeed;
+	--on-accent: #ffffff;
 	--ochre: #b0803a;
 
 	/* Spacing scale (8px base) */
@@ -60,6 +63,57 @@
 	--gray-800: #2b2a25;
 	--gray-900: #1c1b17;
 	--gray-950: #100f0c;
+}
+
+/* Dark theme — auto via OS preference, and via [data-theme="dark"] for a
+   future manual toggle. Components read tokens, so nothing else changes. */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--paper: #1a1a17;
+		--paper-rgb: 26, 26, 23;
+		--surface: #21231f;
+		--surface-2: #1e201c;
+		--ink: #ece9e1;
+		--ink-soft: #a7a99d;
+		--ink-faint: #74766b;
+		--line: #313329;
+		--accent: #5cb6bb;
+		--accent-ink: #7fc9cd;
+		--accent-wash: #12302f;
+		--on-accent: #12140e;
+		--ochre: #d0a24e;
+		--accent-dark: var(--accent-ink);
+		--black: 236, 233, 225;
+		--gray: 167, 169, 157;
+		--gray-light: 49, 51, 41;
+		--gray-dark: 214, 212, 203;
+		--gray-gradient: rgba(var(--gray-light), 50%), var(--paper);
+		--box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35),
+			0 10px 28px rgba(0, 0, 0, 0.45), 0 16px 32px rgba(0, 0, 0, 0.35);
+	}
+}
+:root[data-theme="dark"] {
+	--paper: #1a1a17;
+	--paper-rgb: 26, 26, 23;
+	--surface: #21231f;
+	--surface-2: #1e201c;
+	--ink: #ece9e1;
+	--ink-soft: #a7a99d;
+	--ink-faint: #74766b;
+	--line: #313329;
+	--accent: #5cb6bb;
+	--accent-ink: #7fc9cd;
+	--accent-wash: #12302f;
+	--on-accent: #12140e;
+	--ochre: #d0a24e;
+	--accent-dark: var(--accent-ink);
+	--black: 236, 233, 225;
+	--gray: 167, 169, 157;
+	--gray-light: 49, 51, 41;
+	--gray-dark: 214, 212, 203;
+	--gray-gradient: rgba(var(--gray-light), 50%), var(--paper);
+	--box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35), 0 10px 28px rgba(0, 0, 0, 0.45),
+		0 16px 32px rgba(0, 0, 0, 0.35);
 }
 
 body {

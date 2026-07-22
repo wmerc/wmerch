@@ -88,9 +88,9 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
         pointer-events: none;
         background: linear-gradient(
           90deg,
-          rgba(246, 244, 239, 0.62),
-          rgba(246, 244, 239, 0.12) 55%,
-          rgba(246, 244, 239, 0) 100%
+          rgba(var(--paper-rgb), 0.62),
+          rgba(var(--paper-rgb), 0.12) 55%,
+          rgba(var(--paper-rgb), 0) 100%
         );
       }
       .hero-inner {
@@ -145,22 +145,26 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
       }
       .btn-primary {
         background: var(--accent);
-        color: #fff;
+        color: var(--on-accent);
         border: 1px solid var(--accent);
       }
       .btn-primary:hover {
         background: var(--accent-ink);
         border-color: var(--accent-ink);
-        color: #fff;
+        color: var(--on-accent);
       }
       .btn-ghost {
         color: var(--accent-ink);
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.45);
+        background: color-mix(in srgb, var(--surface) 55%, transparent);
       }
       .btn-ghost:hover {
         border-color: var(--accent);
         color: var(--accent);
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
       }
 
       /* Fanned work-card deck (decorative preview) */
