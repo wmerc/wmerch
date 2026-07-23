@@ -1,7 +1,7 @@
 ---
 order: 2
 company: "Upstream Tech"
-companyDescription: "Upstream Tech, a mission-driven climate tech company, develops software solutions to support environmental decision-making through its two core products: Lens, a remote monitoring platform that expands access to satellite and aerial imagery, aiding in the protection and management of over 70 million acres worldwide, and HydroForecast, the most accurate operational river flow forecasting tool available. As a Product Designer at Upstream, I focused on developing new features for Lens, contributed to iterations of HydroForecast, and also designed and built the company’s marketing site."
+companyDescription: "Upstream Tech is a mission-driven climate company behind Lens and HydroForecast. As a Product Designer, I shipped new features for Lens, contributed to HydroForecast, and built the first product design system."
 workDates: "2018 – 2020"
 coverImage: "/assets/work-cover-upstream.jpg"
 tags: ["Product Design", "Design Systems", "Front-End Development"]

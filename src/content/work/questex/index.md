@@ -1,7 +1,7 @@
 ---
 order: 4
 company: "Questex"
-companyDescription: "Questex is an information services and events company that connects professionals across a wide range of industries, primarily serving B2B audiences through live events, digital communities, market insights, and educational opportunities. As the parent company to multiple brands, Questex develops and maintains media platforms, event websites, and online educational systems for its holdings. I began at Questex as a Designer, working on marketing materials and refining features for a learning management system. I was later promoted to Art Director, leading the redesign of core products, including a content management system for a suite of online news publications and an enhanced learning management system. During this time, I also hired and managed a small team of designers."
+companyDescription: "Questex runs media platforms and events across a range of B2B industries. I joined as a Designer and was promoted to Art Director, leading core product redesigns and managing a small design team."
 workDates: "2012 – 2018"
 coverImage: "/assets/work-cover-questex.jpg"
 tags: ["Art Direction", "Design Systems", "CMS Design"]
